@@ -1,0 +1,64 @@
+name: Sync Supabase snapshot
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out backend
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Export Supabase tables
+        run: python3 scripts/sync_supabase.py
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+
+      - name: Commit changed snapshot
+        id: commit
+        shell: bash
+        run: |
+          if [ -z "$(git status --short -- data)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/*.json
+          git commit -m "chore: sync Supabase snapshot"
+          git push origin HEAD:main
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "backend_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger frontend deployment
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        env:
+          BACKEND_SHA: ${{ steps.commit.outputs.backend_sha }}
+        with:
+          github-token: ${{ secrets.FRONTEND_DISPATCH_TOKEN }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: "gabo0802",
+              repo: "PersonalPortfolio2.0",
+              event_type: "backend-updated",
+              client_payload: {
+                backend_sha: process.env.BACKEND_SHA,
+                changed_area: "data"
+              }
+            });

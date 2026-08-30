@@ -1,0 +1,44 @@
+# PersonalPortfolioBackend
+
+This repository stores the public portfolio snapshot used as a fallback by
+`PersonalPortfolio2.0`. Supabase remains the primary live data source.
+
+## Data snapshot
+
+The `data/` directory mirrors the five public Supabase table families:
+
+- `skills.json`
+- `projects.json`
+- `experiences.json`
+- `project_skills.json`
+- `experience_skills.json`
+
+The files preserve the public rows returned by Supabase. The frontend joins
+the relationship files locally and keeps its existing normalized data
+contract.
+
+## Refreshing the snapshot locally
+
+The exporter uses only the public Supabase REST API and has no third-party
+Python dependencies:
+
+```bash
+python3 scripts/sync_supabase.py --env-file .env
+```
+
+The environment file must provide `SUPABASE_URL` and
+`SUPABASE_ANON_KEY`. The existing frontend names
+`REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY` are also accepted.
+The exporter validates all five responses and relationship references before
+atomically replacing the previous snapshot.
+
+Review the generated files and commit them manually. The optional
+`sync-data.yml` workflow runs the same exporter and commits changed files
+directly to `main`.
+
+## Resume
+
+`GabrielCastejonSWE.tex` is the source of truth for the resume.
+`GabrielCastejonSWE.pdf` is generated from it and is bundled by the frontend.
+The optional `build-resume.yml` workflow compiles the PDF and commits only
+that generated output.

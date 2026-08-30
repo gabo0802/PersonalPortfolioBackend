@@ -1,0 +1,82 @@
+[
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Working as a full-time engineer in EA SPORTS Academy, building and maintaining gameplay systems and backend logic for live game modes in College Football. Own production-quality changes in C++ and Perforce workflows, partner with cross-functional teammates to ship features safely, and contribute bug fixes and telemetry-driven improvements that support release stability.",
+    "id": "5156b488-58e4-40c0-b262-fbf0ce37c6b8",
+    "order_index": 0,
+    "slug": "software-engineer-ea",
+    "subtitle": "Electronic Arts (EA) · Orlando, FL · Hybrid",
+    "timeframe": "May 2025 – Present",
+    "title": "Software Engineer I"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Supported 5–6 ColorStack chapters across the Southwest U.S. and Puerto Rico with sponsorship strategy, chapter growth planning, and operational support from the national team. Led a chapter-leader workshop on E-board accountability, contributed to ambassador documentation, and partnered in recurring meetings to help chapters improve execution and member impact.",
+    "id": "53220165-c57e-47f4-b01f-99b8c74c145d",
+    "order_index": 1,
+    "slug": "chapter-ambassador-colorstack",
+    "subtitle": "ColorStack · Remote",
+    "timeframe": "Aug 2024 – May 2025",
+    "title": "Chapter Ambassador"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Designed and implemented a scalable migration path from AES-128 to AES-256 affecting billions of Cloud Storage data points, using internal C++, Git, Beam, and Kubernetes-based workflows. Authored and presented a 10-page design document to cross-functional stakeholders, submitted 15+ production PRs, and facilitated weekly code review sessions to maintain quality and alignment across the encryption team.",
+    "id": "aa1ddba8-d686-4bcb-ad12-0cae50de7805",
+    "order_index": 2,
+    "slug": "software-engineer-intern-google",
+    "subtitle": "Google · Google Cloud Storage (Encryption) · Seattle, WA · Hybrid",
+    "timeframe": "Aug 2024 – Nov 2024",
+    "title": "Software Engineer Intern"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Completed a dozen+ single integrations and debugging tasks in C++ using Perforce and Visual Studio while shadowing senior engineers on SHIELD infrastructure workflows. Led development of the Dungeon Keeper internal web app end-to-end (React front end, Flask API, C# live-data integration, Linux cron/shell automation), then drove documentation, reviews, and handoff readiness through SWARM and GitLab.",
+    "id": "dd6579f1-9fec-46c9-9934-19a1876233bf",
+    "order_index": 3,
+    "slug": "software-engineer-intern-ea",
+    "subtitle": "Electronic Arts (EA) · Madden SHIELD Team · Orlando, FL · Remote",
+    "timeframe": "May 2024 – Aug 2024",
+    "title": "Software Engineer Intern"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Contributed to PRIMME research on material grain microstructure growth using AI simulation methods, with hands-on model and analysis work in PyTorch and TensorFlow. Ran 5–10 standardized benchmark validations on 3D model outputs, improved statistical/plotting workflows, refactored and shared tooling with peers, and presented findings at the SHPE UF research symposium.",
+    "id": "7990ddff-dd8a-4928-aad5-0fd4a6ca4eb1",
+    "order_index": 4,
+    "slug": "research-assistant-uf",
+    "subtitle": "University of Florida · Gainesville, FL · On-site",
+    "timeframe": "Jan 2023 – May 2025",
+    "title": "Undergraduate Research Assistant"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Served as a technical instructor and mentor across CodePath cohorts, teaching ~40 students per term during 10-week sessions focused on interview prep and applied software development. Helped drive outreach growth (+150% students, +75% fellows), hosted weekly office hours for deeper problem solving, and supported student success through course projects and Android capstone readiness.",
+    "id": "15c48b04-78fb-4c4e-95fd-f7f87b1781fa",
+    "order_index": 5,
+    "slug": "tech-fellow-codepath",
+    "subtitle": "CodePath · Remote",
+    "timeframe": "Jan 2023 – Aug 2024",
+    "title": "Tech Fellow"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Helped establish and scale the UF chapter of ColorStack, first as Administration Chair and later as Vice President, with a focus on sustainable operations and officer accountability. Restructured executive-board planning to raise event output (17 spring events vs 6 prior term), formalized member-selection guidelines, and supported partnerships with Capital One, SEO Tech Developer, NextEra, and Bloomberg.",
+    "id": "c3ec6db3-5b42-4e89-8b5d-8b2e7b1efb35",
+    "order_index": 6,
+    "slug": "vp-colorstack-uf",
+    "subtitle": "ColorStack UF · Gainesville, FL · On-site",
+    "timeframe": "Aug 2023 – May 2024",
+    "title": "Vice President / Admin Chair"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Supported the Creative Services team across data management, assignment filtering, and internal job-tracking systems that coordinated active design and production tasks. Contributed using Adobe Acrobat/Photoshop, Salesforce, Excel, and PowerPoint to keep request pipelines organized and improve day-to-day team execution.",
+    "id": "145d8da2-4618-4bf8-b98d-569507dd92e7",
+    "order_index": 7,
+    "slug": "creative-services-intern-epson",
+    "subtitle": "Epson America Inc. · Los Alamitos, CA",
+    "timeframe": "May 2021 – Aug 2021",
+    "title": "Creative Services Intern"
+  }
+]

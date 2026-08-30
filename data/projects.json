@@ -1,0 +1,173 @@
+[
+  {
+    "created_at": "2026-05-31T14:26:40.267148+00:00",
+    "description": "DiffViewer is a modern, high-performance desktop diff tool built with React and Tauri, utilizing a fast Rust backend for direct filesystem access and diff parsing. It provides native SCM integrations for Git and Perforce, customizable syntax highlighting via Monaco Editor, a built-in merge conflict resolution editor, and SQL-based settings persistence.",
+    "gallery": [
+      {
+        "caption": "Diff Editor View",
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/gabo0802/DiffViewer/master/src/assets/DiffEditor.png"
+      },
+      {
+        "caption": "Settings Configuration",
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/gabo0802/DiffViewer/master/src/assets/SettingsTab.png"
+      },
+      {
+        "caption": "Add Diff Dialog",
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/gabo0802/DiffViewer/master/src/assets/AddDiff.png"
+      },
+      {
+        "caption": "Monaco Editor Custom Syntax Highlighting",
+        "type": "image",
+        "url": "https://raw.githubusercontent.com/gabo0802/DiffViewer/master/src/assets/SyntaxHighlight.png"
+      }
+    ],
+    "id": "037d8823-e359-436e-b18d-ad1b7a356f55",
+    "links": {
+      "demo": null,
+      "repo": "https://github.com/gabo0802/DiffViewer"
+    },
+    "slug": "diff-viewer",
+    "summary": "A modern, lightning-fast desktop diff tool for Git, Perforce, patch files, and external two-file comparisons.",
+    "thumbnail": "https://github.com/gabo0802/DiffViewer/blob/master/src-tauri/icons/icon.png?raw=true",
+    "title": "DiffViewer"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Machine Minds is a level-based 2D tank game built as a capstone project in Unity. The game tracks player metrics (accuracy, damage taken, survival, scoring) and combines that with survey feedback to adapt difficulty between levels using a Python logistic regression model. It supports desktop and WebGL play, and includes online leaderboards plus analytics integrations.",
+    "gallery": [
+      {
+        "caption": "Final presentation demo",
+        "type": "video",
+        "url": "https://www.youtube.com/watch?v=VX-DNo4qVTQ"
+      }
+    ],
+    "id": "0698f27a-498a-42af-9c66-077a1d3a383c",
+    "links": {
+      "demo": "https://gabo0802.itch.io/machine-minds-demo",
+      "repo": "https://github.com/gabo0802/MachineMinds"
+    },
+    "slug": "machine-minds",
+    "summary": "Unity tank shooter with machine-learning–driven adaptive difficulty and Firebase-backed leaderboards.",
+    "thumbnail": "https://img.itch.zone/aW1nLzIwMzE2OTMzLnBuZw==/original/J0wlgS.png",
+    "title": "Machine Minds"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Poseidon predicts flash flooding by combining historical flood datasets with weather features through a supervised machine-learning pipeline. The frontend focuses on an interactive map-based UX for location selection and prediction display, while the backend serves model inference through a Python API. The project was built as a disaster-preparedness focused app during a hackathon cycle.",
+    "gallery": [
+      {
+        "caption": "Poseidon landing page",
+        "url": "https://raw.githubusercontent.com/gabo0802/Poseidon/main/front-end/public/Landing_Page.png"
+      },
+      {
+        "caption": "Map selection workflow",
+        "url": "https://raw.githubusercontent.com/gabo0802/Poseidon/main/front-end/public/PickFromMap.png"
+      },
+      {
+        "caption": "City-level prediction view",
+        "url": "https://raw.githubusercontent.com/gabo0802/Poseidon/main/front-end/public/Gainesville.png"
+      }
+    ],
+    "id": "a554b0a6-b6e9-4d33-9b69-8028fec5eb1e",
+    "links": {
+      "demo": "https://poseidon-project-final.vercel.app/",
+      "repo": "https://github.com/gabo0802/Poseidon"
+    },
+    "slug": "poseidon",
+    "summary": "Flash-flood prediction web app using React + FastAPI + machine learning for Florida cities.",
+    "thumbnail": "https://raw.githubusercontent.com/gabo0802/Poseidon/main/front-end/public/Landing_Page.png",
+    "title": "Poseidon"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "PRIMME (Physics-Regulated Interpretable Machine Learning Microstructure Evolution) is a research-focused framework for training and validating neural-network models that emulate isotropic and anisotropic grain growth. It includes reproducible local and Colab workflows, visualization outputs for multiple simulation modes, and tooling for working with large scientific datasets.",
+    "gallery": [
+      {
+        "caption": "Isotropic training - mode filter",
+        "url": "https://raw.githubusercontent.com/EAGG-UF/PRIMME/main/materials/mf.gif"
+      },
+      {
+        "caption": "Isotropic training - MCP",
+        "url": "https://raw.githubusercontent.com/EAGG-UF/PRIMME/main/materials/mcp.gif"
+      },
+      {
+        "caption": "Isotropic training - phase field",
+        "url": "https://raw.githubusercontent.com/EAGG-UF/PRIMME/main/materials/phase_field.gif"
+      }
+    ],
+    "id": "1a945056-10f7-4c6e-93f1-b8fea9dfa709",
+    "links": {
+      "demo": "https://colab.research.google.com/github/gabo0802/PRIMME-Readable/blob/main/PRIMME/run.ipynb",
+      "repo": "https://github.com/EAGG-UF/PRIMME"
+    },
+    "slug": "primme",
+    "summary": "Physics-regulated interpretable ML framework for microstructure grain-growth simulation.",
+    "thumbnail": "https://raw.githubusercontent.com/EAGG-UF/PRIMME/main/materials/graphic.jpg",
+    "title": "PRIMME"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "Swipetunes is a mobile-first music discovery app where users swipe right to save tracks and left to dismiss them, creating playlists in a fast and familiar interaction model. The app supports Spotify login, recommendation-driven song queues, audio snippet previews, and a swipe history log. It was built as a milestone-driven project focused on clean UX, mobile gesture interactions, and playlist curation flows.",
+    "gallery": [
+      {
+        "caption": "Milestone demo walkthrough",
+        "url": "https://user-images.githubusercontent.com/94129178/234140216-567d4d31-99b1-48f8-8460-e031245dc38f.gif"
+      },
+      {
+        "caption": "Login screen",
+        "url": "https://i.imgur.com/NAiS24m.png"
+      },
+      {
+        "caption": "Discover and swipe interface",
+        "url": "https://i.imgur.com/YmBz23n.png"
+      },
+      {
+        "caption": "Swipe history log",
+        "url": "https://i.imgur.com/cOkiu34.png"
+      },
+      {
+        "caption": "Wireframe overview",
+        "url": "https://i.imgur.com/vlKmgnP.png"
+      }
+    ],
+    "id": "7e8fcc70-aba7-403d-9d5d-a7fd70ffcd41",
+    "links": {
+      "demo": null,
+      "repo": null
+    },
+    "slug": "swipetunes",
+    "summary": "Mobile music discovery app that uses Tinder-style swipe gestures to build playlists from Spotify recommendations.",
+    "thumbnail": "https://camo.githubusercontent.com/86c2b7863640b91e89a37f1c76f9154abb33853538e27948f2e04acf9f058092/68747470733a2f2f692e696d6775722e636f6d2f355032594269752e706e67",
+    "title": "Swipetunes"
+  },
+  {
+    "created_at": "2026-05-29T03:16:24.470823+00:00",
+    "description": "UF-OneClick is a full-stack subscription manager that lets users add and track subscriptions, view monthly/annual costs, and monitor spending patterns through reports and visualizations. The frontend was built with Angular while the backend uses Go services and MySQL-backed persistence. The app was created as a UF-sponsored collaborative project with both frontend and backend contributors.",
+    "gallery": [
+      {
+        "caption": "Subscription list view",
+        "url": "https://user-images.githubusercontent.com/92041237/232912902-e5d79f0d-fafb-4926-a775-c85bde788a6e.png"
+      },
+      {
+        "caption": "Subscription report",
+        "url": "https://user-images.githubusercontent.com/92041237/232912604-6c50400c-4d3c-4bbb-a5b5-2b7df7ddaaaf.png"
+      },
+      {
+        "caption": "Subscription graph",
+        "url": "https://user-images.githubusercontent.com/92041237/232935983-aeb65c51-4890-4757-bd40-53af3735d64f.png"
+      }
+    ],
+    "id": "8742e4f6-0f37-46af-8ee1-78aece4a1265",
+    "links": {
+      "demo": null,
+      "repo": "https://github.com/gabo0802/UF-OneClick"
+    },
+    "slug": "uf-oneclick",
+    "summary": "Subscription manager that centralizes tracking, payment timing, and spending insights in one platform.",
+    "thumbnail": "https://raw.githubusercontent.com/gabo0802/UF-OneClick/main/Client/src/assets/oneclick-logo-files/png/logo-no-background.png",
+    "title": "UF-OneClick"
+  }
+]

@@ -1,0 +1,72 @@
+name: Build resume
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "GabrielCastejonSWE.tex"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out backend
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Prepare isolated build directory
+        run: |
+          mkdir -p .ci/resume-build
+          cp GabrielCastejonSWE.tex .ci/resume-build/
+
+      - name: Compile resume
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: GabrielCastejonSWE.tex
+          working_directory: .ci/resume-build
+          args: -pdf -interaction=nonstopmode -halt-on-error
+
+      - name: Update canonical PDF
+        id: commit
+        shell: bash
+        run: |
+          cp .ci/resume-build/GabrielCastejonSWE.pdf GabrielCastejonSWE.pdf
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add GabrielCastejonSWE.pdf
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -m "chore: rebuild resume"
+          git push origin HEAD:main
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "backend_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger frontend deployment
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        env:
+          BACKEND_SHA: ${{ steps.commit.outputs.backend_sha }}
+        with:
+          github-token: ${{ secrets.FRONTEND_DISPATCH_TOKEN }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: "gabo0802",
+              repo: "PersonalPortfolio2.0",
+              event_type: "backend-updated",
+              client_payload: {
+                backend_sha: process.env.BACKEND_SHA,
+                changed_area: "resume"
+              }
+            });
