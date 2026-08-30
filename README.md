@@ -36,6 +36,18 @@ Review the generated files and commit them manually. The optional
 `sync-data.yml` workflow runs the same exporter and commits changed files
 directly to `main`.
 
+### Action secrets
+
+The backend workflows expect these GitHub Actions secrets:
+
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+- `FRONTEND_DISPATCH_TOKEN`
+
+The dispatch token only needs permission to trigger workflows in
+`gabo0802/PersonalPortfolio2.0`. Never use a `service_role` key for the
+exporter.
+
 ## Resume
 
 `GabrielCastejonSWE.tex` is the source of truth for the resume.
