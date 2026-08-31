@@ -48,6 +48,17 @@ The dispatch token only needs permission to trigger workflows in
 `gabo0802/PersonalPortfolio2.0`. Never use a `service_role` key for the
 exporter.
 
+## Adding portfolio content
+
+Invoke the repository-local `/portfolio-content` skill when you want to add
+public projects, experiences, or job skills from a natural-language
+description. It validates the proposed rows, writes them through Supabase's
+public REST API, and refreshes the five JSON snapshot files only after the
+database write succeeds.
+
+The skill is add-only: existing slugs are reported as conflicts, and it never
+commits or pushes generated files. Supabase remains the live source of truth.
+
 ## Resume
 
 `GabrielCastejonSWE.tex` is the source of truth for the resume.

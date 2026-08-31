@@ -1,0 +1,5 @@
+interface:
+  display_name: "Portfolio Content"
+  short_description: "Add portfolio content to Supabase"
+policy:
+  allow_implicit_invocation: false
