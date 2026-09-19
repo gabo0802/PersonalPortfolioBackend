@@ -578,5 +578,65 @@
     "proficiency": "Exposed",
     "slug": "windows",
     "visual": "https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"
+  },
+  {
+    "category": "Other Tools",
+    "created_at": "2026-09-19T00:00:00.000000+00:00",
+    "id": "DEA70892-164E-4B4E-B5C3-07DBBA1D3368",
+    "is_featured": false,
+    "name": "Electron",
+    "proficiency": "Experienced",
+    "slug": "electron",
+    "visual": "https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white"
+  },
+  {
+    "category": "DevOps",
+    "created_at": "2026-09-19T00:00:00.000000+00:00",
+    "id": "E47BDA62-B872-4961-B6E3-1953D35DC041",
+    "is_featured": false,
+    "name": "Splunk",
+    "proficiency": "Exposed",
+    "slug": "splunk",
+    "visual": "https://img.shields.io/badge/Splunk-000000?style=for-the-badge&logo=splunk&logoColor=white"
+  },
+  {
+    "category": "DevOps",
+    "created_at": "2026-09-19T00:00:00.000000+00:00",
+    "id": "0977C0B1-A0F0-4329-A067-10A4AAB267CA",
+    "is_featured": false,
+    "name": "Grafana",
+    "proficiency": "Exposed",
+    "slug": "grafana",
+    "visual": "https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white"
+  },
+  {
+    "category": "DevOps",
+    "created_at": "2026-09-19T00:00:00.000000+00:00",
+    "id": "3A21C5EA-0D93-48E6-BD99-4D5773473C0E",
+    "is_featured": false,
+    "name": "SSH",
+    "proficiency": "Exposed",
+    "slug": "ssh",
+    "visual": "https://img.shields.io/badge/SSH-222222?style=for-the-badge&logo=openssh&logoColor=white"
+  },
+  {
+    "category": "AI Tools",
+    "created_at": "2026-09-19T00:00:00.000000+00:00",
+    "id": "3FFE32B4-D074-4A47-ACCD-5D89C9572F85",
+    "is_featured": false,
+    "name": "GitHub Copilot",
+    "proficiency": "Experienced",
+    "slug": "github-copilot",
+    "visual": "https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white"
+  },
+  {
+    "category": "AI Tools",
+    "created_at": "2026-09-19T00:00:00.000000+00:00",
+    "id": "346F52DB-F03A-4823-AADB-B96CBBBDB4E4",
+    "is_featured": false,
+    "name": "Claude Code",
+    "proficiency": "Experienced",
+    "slug": "claude-code",
+    "visual": "https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white"
   }
 ]

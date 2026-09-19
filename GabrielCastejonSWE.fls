@@ -1,8 +1,8 @@
-PWD /Users/gabecastejon/Developer/Resume
+PWD /Users/gabecastejon/Developer/PersonalPortfolioBackend
 INPUT /usr/local/texlive/2026basic/texmf.cnf
 INPUT /usr/local/texlive/2026basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/gabecastejon/Developer/Resume/GabrielCastejonSWE.tex
+INPUT /Users/gabecastejon/Developer/PersonalPortfolioBackend/GabrielCastejonSWE.tex
 OUTPUT GabrielCastejonSWE.log
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/base/article.cls

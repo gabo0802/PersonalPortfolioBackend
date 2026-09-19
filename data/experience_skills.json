@@ -100,6 +100,54 @@
     "skill_slug": "go"
   },
   {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "angular"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "claude-code"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "cpp"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "docker"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "dotnet"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "electron"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "grafana"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "github-copilot"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "react"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "splunk"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "ssh"
+  },
+  {
+    "experience_slug": "software-engineer-tools-ea",
+    "skill_slug": "typescript"
+  },
+  {
     "experience_slug": "tech-fellow-codepath",
     "skill_slug": "androidstudio"
   },
