@@ -18,14 +18,14 @@ the frontend fallback.
 Classify the request before building a payload:
 
 - **Live add**: insert new Supabase rows through the workflow below. Existing
-   slugs are conflicts; explain that this writer cannot update or delete them.
+  slugs are conflicts; explain that this writer cannot update or delete them.
 - **Local queue**: if the user asks to defer a live write, create a clearly
-   named SQL queue file with the approved rows and guarded inserts. Do not
-   contact Supabase or claim that the live data changed.
+  named SQL queue file with the approved rows and guarded inserts. Do not
+  contact Supabase or claim that the live data changed.
 - **Local snapshot**: if the user explicitly asks to change local JSON, update
-   the relevant primary and relationship snapshots together, validate their
-   references and ordering, and label the result as local or pending. Do not
-   imply that it was synchronized from Supabase.
+  the relevant primary and relationship snapshots together, validate their
+  references and ordering, and label the result as local or pending. Do not
+  imply that it was synchronized from Supabase.
 
 When a user asks to update an existing row, do not silently turn that request
 into a second live row. Explain the add-only limitation and ask which mode or
@@ -35,18 +35,18 @@ authoritative requirement and regenerate the proposed payload when it changes.
 Resolve uncertainty before proposing a write:
 
 - Preserve factual content from a resume or source document, but ask whether
-   the public description should remain verbatim or be synthesized into prose.
+  the public description should remain verbatim or be synthesized into prose.
 - Treat dates, titles, slugs, and `order_index` values as user-owned data. Ask
-   for missing values, warn about order collisions, and do not silently reindex
-   unrelated rows.
+  for missing values, warn about order collisions, and do not silently reindex
+  unrelated rows.
 - Distinguish existing catalog skills from new skill definitions. Link an
-   existing skill only when the user approves its relevance; for a new skill,
-   confirm its slug and required metadata (`name`, `visual`, and
-   `proficiency`) before writing it. Do not add skills merely because a tool or
-   concept appears incidentally in prose.
+  existing skill only when the user approves its relevance; for a new skill,
+  confirm its slug and required metadata (`name`, `visual`, and
+  `proficiency`) before writing it. Do not add skills merely because a tool or
+  concept appears incidentally in prose.
 - When the user approves a group of skills without individual levels, present
-   the proposed levels and categories for confirmation rather than treating
-   inferred defaults as facts.
+  the proposed levels and categories for confirmation rather than treating
+  inferred defaults as facts.
 
 ## Input contract
 
@@ -100,6 +100,7 @@ missing required values or an explicit `order_index`; do not invent content.
    payload is large. Never print environment values or credentials.
    Complete this step when the writer reports a successful database mutation
    or returns a surfaced error.
+
 4. The writer preflights existing slugs, duplicate relationships, referenced
    skills, and required field types. It inserts skills first, then parent
    projects/experiences, then relationship rows. If any stage fails, report
@@ -111,8 +112,10 @@ missing required values or an explicit `order_index`; do not invent content.
    ```bash
    python3 scripts/sync_supabase.py --env-file .env
    ```
+
    Complete this step when the updater exits successfully and reports the
    refreshed table counts.
+
 6. Report both outcomes separately: Supabase mutation status and snapshot
    synchronization status, including inserted counts and generated files.
    Inspect `git status --short -- data` so the user knows what changed.
@@ -128,14 +131,14 @@ Use this branch only when the user explicitly requests local persistence or a
 deferred queue:
 
 - A queue file contains only the user-confirmed SQL and should use guarded,
-   reviewable inserts. Keep credentials and environment values out of it.
+  reviewable inserts. Keep credentials and environment values out of it.
 - A local snapshot update must cover every affected file: the relevant primary
-   table, any new skill rows, and every relationship table. Preserve the
-   repository's JSON shape, unique ordering, and referential integrity.
+  table, any new skill rows, and every relationship table. Preserve the
+  repository's JSON shape, unique ordering, and referential integrity.
 - Validate JSON parsing, required fields, relationship references, duplicate
-   relationships, and any user-specified ordering after the edit.
+  relationships, and any user-specified ordering after the edit.
 - Report remote status separately from local status. A local queue or snapshot
-   is not a Supabase mutation or synchronization.
+  is not a Supabase mutation or synchronization.
 
 ## Supabase boundary
 
