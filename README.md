@@ -1,63 +1,71 @@
 # PersonalPortfolioBackend
 
-This repository stores the public portfolio snapshot used as a fallback by
-`PersonalPortfolio2.0`. Supabase remains the primary live data source.
+This repository holds the portfolio content and resume used by
+`PersonalPortfolio2.0`. The JSON files in `data/` are the single source of
+truth: the frontend bundles them at build time (through its `backend` git
+submodule) and makes no database calls. Supabase is no longer read.
 
-## Data snapshot
+## Data
 
-The `data/` directory mirrors the five public Supabase table families:
+`data/` contains five files:
 
 - `skills.json`
 - `projects.json`
 - `experiences.json`
-- `project_skills.json`
-- `experience_skills.json`
+- `project_skills.json` (links a `project_slug` to a `skill_slug`)
+- `experience_skills.json` (links an `experience_slug` to a `skill_slug`)
 
-The files preserve the public rows returned by Supabase. The frontend joins
-the relationship files locally and keeps its existing normalized data
-contract.
+Rules the frontend tests enforce (the admin UI checks them before saving):
 
-## Refreshing the snapshot locally
+- Slugs are unique within each file, and links point at real rows.
+- `experiences[].order_index` values are unique. Lower numbers show first.
+- Every experience links at least one skill.
+- `proficiency` is one of Expert, Proficient, Experienced, Novice, Exposed.
 
-The exporter uses only the public Supabase REST API and has no third-party
-Python dependencies:
+Files use 2-space indentation, keys sorted alphabetically, UTF-8 characters
+written as-is, and a trailing newline. Rows keep their existing order; new
+rows go where they sort (skills by slug, projects newest first, experiences by
+`order_index`, links by parent slug then skill slug).
+
+## Editing data with the admin UI
 
 ```bash
-python3 scripts/sync_supabase.py --env-file .env
+npm run admin
 ```
 
-The environment file must provide `SUPABASE_URL` and
-`SUPABASE_ANON_KEY`. The existing frontend names
-`REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY` are also accepted.
-The exporter validates all five responses and relationship references before
-atomically replacing the previous snapshot.
+Then open <http://localhost:4310>. It needs Node 20+ and no `npm install`.
+Set `ADMIN_PORT` to use another port.
 
-Review the generated files and commit them manually. The optional
-`sync-data.yml` workflow runs the same exporter and commits changed files
-directly to `main`.
+- Skills, Projects and Experiences tabs with search, create, edit and delete.
+- Pick a project's or experience's skills from the existing skills list.
+- Drag experiences (or use ↑ ↓) to change `order_index`.
+- Renaming a slug updates every link to it. Deleting a row removes its links.
+- New rows get an `id` and `created_at` in the same format as existing ones.
+- Edits stay in the browser until you press **Save to data/** (or ⌘S/Ctrl+S).
+  Saving is blocked while any validation problem is listed.
+- **Review diff & commit** shows `git diff -- data/*.json`. From there you can
+  commit only the data files, then push. Other modified files (such as the
+  resume sources) are never included.
 
-### Action secrets
+The server listens on 127.0.0.1 only and lives in `admin/`, which the frontend
+never copies or deploys.
 
-The backend workflows expect these GitHub Actions secrets:
+After editing the JSON by hand, run `npm run check-data` for the same
+validation and format check (`npm run check-data -- --fix` rewrites drifted
+formatting without reordering rows).
 
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `FRONTEND_DISPATCH_TOKEN`
+## Deploying
 
-The dispatch token only needs permission to trigger workflows in
-`gabo0802/PersonalPortfolio2.0`. Never use a `service_role` key for the
-exporter.
+Pushing changes under `data/` (or the resume PDF) to `main` runs
+`notify-frontend.yml`, which redeploys the frontend. It needs a
+`FRONTEND_DISPATCH_TOKEN` secret that can trigger workflows in
+`gabo0802/PersonalPortfolio2.0`.
 
-## Adding portfolio content
+## Adding content with an agent
 
-Invoke the repository-local `/portfolio-content` skill when you want to add
-public projects, experiences, or job skills from a natural-language
-description. It validates the proposed rows, writes them through Supabase's
-public REST API, and refreshes the five JSON snapshot files only after the
-database write succeeds.
-
-The skill is add-only: existing slugs are reported as conflicts, and it never
-commits or pushes generated files. Supabase remains the live source of truth.
+The repository-local `/portfolio-content` skill turns a natural-language
+description into rows in `data/*.json`. It validates the same rules as the
+admin UI and never commits or pushes.
 
 ## Resume
 

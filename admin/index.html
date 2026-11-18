@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Admin</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.mjs"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <strong>Portfolio admin</strong>
+        <span class="muted" id="branch"></span>
+      </div>
+      <div class="status" id="status"></div>
+      <div class="actions">
+        <button type="button" id="reload" class="ghost" title="Reload data/*.json from disk">Reload</button>
+        <button type="button" id="discard" class="ghost">Discard edits</button>
+        <button type="button" id="save" class="primary">Save to data/</button>
+        <button type="button" id="review">Review diff &amp; commit</button>
+      </div>
+    </header>
+
+    <nav class="tabs" id="tabs" role="tablist"></nav>
+    <section class="problems" id="problems" hidden></section>
+
+    <main class="workspace">
+      <section class="list-pane">
+        <div class="list-toolbar">
+          <input type="search" id="search" placeholder="Search…" aria-label="Search rows" />
+          <button type="button" id="create" class="primary"></button>
+        </div>
+        <p class="hint" id="list-hint"></p>
+        <div class="table-wrap"><table id="rows"></table></div>
+      </section>
+      <section class="editor-pane" id="editor"></section>
+    </main>
+
+    <dialog id="git-dialog">
+      <form method="dialog" class="dialog-head">
+        <h2>Review data changes</h2>
+        <button class="ghost" value="close" aria-label="Close">✕</button>
+      </form>
+      <div id="git-body"></div>
+    </dialog>
+
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+  </body>
+</html>

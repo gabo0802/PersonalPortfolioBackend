@@ -1,0 +1,35 @@
+name: Redeploy portfolio
+
+# Any change to the portfolio data (new project, role, skill...) or to a
+# committed resume PDF redeploys the frontend. The build-resume workflow sends
+# its own dispatch for PDFs it rebuilds, because commits pushed with
+# GITHUB_TOKEN do not trigger this workflow.
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "data/**"
+      - "GabrielCastejonSWE.pdf"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger frontend deployment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.FRONTEND_DISPATCH_TOKEN }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: "gabo0802",
+              repo: "PersonalPortfolio2.0",
+              event_type: "backend-updated",
+              client_payload: {
+                backend_sha: context.sha,
+                changed_area: "data"
+              }
+            });

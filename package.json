@@ -1,0 +1,12 @@
+{
+  "name": "personal-portfolio-backend",
+  "private": true,
+  "description": "Portfolio data (data/*.json), resume, and a local admin UI for editing the data.",
+  "scripts": {
+    "admin": "node admin/server.mjs",
+    "check-data": "node admin/check.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

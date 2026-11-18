@@ -1,5 +1,5 @@
 interface:
   display_name: "Portfolio Content"
-  short_description: "Add portfolio content to Supabase"
+  short_description: "Add or edit portfolio content in data/*.json"
 policy:
   allow_implicit_invocation: false
